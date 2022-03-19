@@ -70,8 +70,8 @@ def test_app_open_connection_row_factory_module3():
     flask_app = "app" in dir(app)
     assert flask_app, "Have you created an instance of the `Flask` class called `app`?"
 
-    open_connection = "open_connection" in dir(app)
-    assert open_connection, "Have you defined a function named `open_connection`?"
+    #open_connection = "open_connection" in dir(app)
+    assert open_connection in dir(app), "Have you defined a function named `open_connection`?"
 
     with app.app.app_context():
         db = app.open_connection()
